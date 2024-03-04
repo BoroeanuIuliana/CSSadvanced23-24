@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circle</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #050210;
+      }
+
+      .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .circle {
+        width: 400px;
+        height: 400px;
+        border-radius: 100%;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(45deg, #fb5dad, #55fb9f, #b97aff);
+        animation: rotate 1s linear infinite;
+      }
+
+      .circle::before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: -30px;
+        right: -30px;
+        bottom: -30px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #fb5dad, #55fb9f, #b97aff);
+        filter: blur(50px);
+      }
+
+      .second-circle {
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        border-radius: 100%;
+        background: #050210;
+        
+      }
+
+      .third-circle {
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        border-radius: 100%;
+        transform: scale(0);
+        background: linear-gradient(360deg, #050210, #06011b);
+        animation: pulse 0.8s ease-in-out infinite;
+      }
+      .circle-4 {
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        border-radius: 100%;
+        transform: scale(0);
+        background: linear-gradient(360deg, #050210,  #1c143b);
+        animation: pulse 1s ease-in-out infinite;
+      }
+
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes pulse {
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="circle"></div>
+      <div class="second-circle"></div>
+      <div class="third-circle"></div>
+      <div class="circle-4"></div>
+    </div>
+  </body>
+</html>
